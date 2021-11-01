@@ -1,0 +1,29 @@
+
+class Solution {
+ 
+  // Returns "Yes" if S is one of the form a^nb^n.
+  static String isAnBn(String S)
+  {
+    int n = S.length();
+    if ((n & 1) != 0)
+      return "false";
+ 
+    // checking first part is 'a' and other part is all 'b'
+    int i;
+    for (i = 0; i < n / 2; i++)
+      if (S.charAt(i) != 'a' || S.charAt(n - i - 1) != 'b')
+        return "false";
+    return "true";
+  }
+ 
+  // Main code
+  public static void main (String[] args)
+  {
+     
+    String S = "ab";
+ 
+    // Calling the Function
+    System.out.println(isAnBn(S));
+  }
+}
+ 
